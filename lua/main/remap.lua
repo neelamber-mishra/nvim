@@ -8,3 +8,4 @@ vim.opt.clipboard="unnamedplus"
 -- Key mappings you might want to add
 vim.keymap.set('n', '<leader>ctr', ':CompetiTest run<CR>', { desc = 'Run test cases' })
 vim.keymap.set('n', '<leader>cta', ':CompetiTest add_testcase<CR>', { desc = 'Add test case' })
+vim.keymap.set('n', '<leader>t', '<cmd>vsp | term<CR>', { desc = 'Open terminal in vertical split' })

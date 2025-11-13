@@ -24,6 +24,12 @@ return require('packer').startup(function(use)
       config = function()
           require("competitest").setup({
               -- your configuration here (optional)
+              compile_command = {
+                  c = { exec = "gcc", args = { "-Wall", "$(FNAME)", "-o", "$(FNOEXT)" } },
+                  cpp = { exec = "g++", args = { "-std=c++23", "-Wall", "$(FNAME)", "-o", "$(FNOEXT)" } },
+                  rust = { exec = "rustc", args = { "$(FNAME)" } },
+                  java = { exec = "javac", args = { "$(FNAME)" } },
+              }
           })
       end
   }-- In your plugins configuration
@@ -41,5 +47,6 @@ return require('packer').startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "neovim/nvim-lspconfig"
   use "p00f/cphelper.nvim"
+  use {'neoclide/coc.nvim', branch = 'release'}
   end)
 
